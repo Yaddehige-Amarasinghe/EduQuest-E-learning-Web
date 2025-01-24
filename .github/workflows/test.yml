@@ -18,5 +18,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install additional Babel dependency
+        run: npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
       - name: Run tests
-        run: npm test
+        run: npm test -- --detectOpenHandles
